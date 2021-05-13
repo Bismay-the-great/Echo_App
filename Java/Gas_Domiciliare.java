@@ -2,15 +2,15 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
-public class Energia_Elettrica extends JFrame{
+public class Gas_Domiciliare {
 
-    public static void main(String [] args){
+    public static void main(String[] args ){
         JPanel table_pannel = new JPanel();
         table_pannel.setLayout(new BorderLayout());
         DefaultTableModel tableModel = new DefaultTableModel();
         JTable table = new JTable(tableModel);
         tableModel.addColumn(new Object[]{"Mese"});
-        tableModel.addColumn(new Object[]{"Consumo in KW"});
+        tableModel.addColumn(new Object[]{"Consumo in m^3"});
         tableModel.addColumn(new Object[]{"Costo in Euro"});
         tableModel.addColumn(new Object[]{"CO2 Prodotta"});
         tableModel.addRow(new Object[]{" Gennaio "});
@@ -32,8 +32,5 @@ public class Energia_Elettrica extends JFrame{
         JFrame frame = new JFrame();
         frame.add(new JScrollPane(table_pannel));
         frame.setVisible(true);
-
     }
-
 }
-
