@@ -1,6 +1,4 @@
-package Auto;
-
-import org.sqlite.core.Codes;
+package Car;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.lang.*;
 
 
-public class Auto extends JFrame implements ActionListener{
+public class AutoSwing extends JFrame implements ActionListener{
 
      JComboBox Marca;
      JComboBox Alimentazione;
@@ -19,8 +17,8 @@ public class Auto extends JFrame implements ActionListener{
      String[] marche = {"...", "Mercedes-Benz", "BMW", "Fiat", "Audi", "Ford", "Alfa Romeo", "Volkswagen"};
      String[] alimentazione = {"...", "Benzina", "Diesel", "GPL", "Elettrica"};
 
-    public Auto() {
-        super("Auto");
+    public AutoSwing() {
+        super("Car");
         Marca = new JComboBox(marche);
         Alimentazione = new JComboBox(alimentazione);
         Km = new JTextField("0 Km");
