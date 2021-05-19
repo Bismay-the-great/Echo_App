@@ -3,8 +3,14 @@ package JDBC;
 import java.sql.*;
 
 public class DBManager {
-    public static String JDBC_Driver = "org.sqlite.jdbc";
-    public static String JDBC_URL = "jdbc:sqlite:filename.db";
+
+//    public static String JDBC_Driver = "org.sqlite.jdbc";
+//    public static String JDBC_URL = "jdbc:sqlite:filename.db";
+
+    public static String JDBC_Driver = "com.mysql.cj.jdbc.Driver";
+    public static String JDBC_URL = "jdbc:mysql://localhost/dbname?user=user&password=pass";
+
+
     static Connection connection;
 
     public static void setConnection(String Driver, String URL) {

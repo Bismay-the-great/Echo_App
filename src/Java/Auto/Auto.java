@@ -1,5 +1,7 @@
 package Auto;
 
+import org.sqlite.core.Codes;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
