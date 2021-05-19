@@ -1,11 +1,12 @@
 package User;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class User {
 
-    private String Name;
-    private String Surname;
+    String Name;
+    String Surname;
     private String Email;
     private String Password;
 
@@ -56,6 +57,22 @@ public class User {
         Password = password;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Name.equals(user.Name) && Surname.equals(user.Surname) && Email.equals(user.Email) && Password.equals(user.Password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Name, Surname, Email, Password);
+    }
+
+
+
     @Override
     public String toString() {
         return "User{" +
@@ -65,6 +82,8 @@ public class User {
                 ", Password='" + Password + '\'' +
                 '}';
     }
+
+
 }
 
 
