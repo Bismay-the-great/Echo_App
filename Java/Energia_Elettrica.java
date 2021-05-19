@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.sql.PseudoColumnUsage;
 
 public class Energia_Elettrica extends JFrame{
 
@@ -33,7 +34,48 @@ public class Energia_Elettrica extends JFrame{
         frame.add(new JScrollPane(table_pannel));
         frame.setVisible(true);
 
+
     }
 
 }
+
+
+class Tabella_Energia extends JFrame
+{
+
+}
+
+// CLASS RENDERER
+
+class RowRenderer extends JLabel implements ListCellRenderer{
+
+    // CONSTRUCTOR
+    public RowRenderer(JTable table) {
+
+    }
+
+
+
+
+
+    @Override
+    public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+        //create auto generated method
+
+        return null;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
