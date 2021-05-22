@@ -1,6 +1,6 @@
-package User;
+package User;//package User;
 
-
+import Car.AutoSwing;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,16 +13,17 @@ public class Login extends JFrame implements ActionListener{
 
     JTextField Username;
     JPasswordField Password;
-    JButton Accedi;
+    JButton AccediButton;
 
     public Login() {
-        super("Echo");
+        super("Login");
         Username = new JTextField();
         Password = new JPasswordField();
-        Accedi = new JButton("Accedi");
+        AccediButton = new JButton("Accedi");
+        AccediButton.addActionListener(this);
 
         JPanel p1 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        p1.add(Accedi);
+        p1.add(AccediButton);
 
         JPanel p = new JPanel(new GridLayout(6, 2));
         p.add(new JLabel("Username:"));
@@ -32,14 +33,24 @@ public class Login extends JFrame implements ActionListener{
         p.add(p1);
 
 
-    setContentPane(p);
-    setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    setSize(300, 250);
-    setVisible(true);
+        setContentPane(p);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setSize(300, 250);
+        setVisible(true);
     }
 
     @Override
-    public void actionPerformed (ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {
+        String userName = Username.getText();
+        String password = Password.getText();
+
+        if(e.getSource() == AccediButton) {
+            if (userName.trim().equals("admin") && password.trim().equals("admin")) {
+                SwingUtilities.invokeLater(AutoSwing::new);
+            } else {
+
+            }
+        }
 
     }
 
