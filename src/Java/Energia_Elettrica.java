@@ -26,30 +26,30 @@ public class Energia_Elettrica extends JFrame{
         tableModel.addRow(new Object[]{" Novembre "});
         tableModel.addRow(new Object[]{" Dicembre "});
 
-        Object e = table.getValueAt(1,1);
-        table.setValueAt(e,1,3);
-        Object f = table.getValueAt(2,1);
-        table.setValueAt(f,2,3);
-        Object g = table.getValueAt(3,1);
-        table.setValueAt(g,3,3);
-        Object h = table.getValueAt(4,1);
-        table.setValueAt(h,4,3);
-        Object i = table.getValueAt(5,1);
-        table.setValueAt(i,5,3);
-        Object l = table.getValueAt(6,1);
-        table.setValueAt(l,6,3);
-        Object m = table.getValueAt(7,1);
-        table.setValueAt(m,7,3);
-        Object n = table.getValueAt(8,1);
-        table.setValueAt(n,8,3);
-        Object o = table.getValueAt(9,1);
-        table.setValueAt(o,9,3);
-        Object p = table.getValueAt(10,1);
-        table.setValueAt(p,10,3);
-        Object q = table.getValueAt(11,1);
-        table.setValueAt(q,11,3);
-        Object r = table.getValueAt(12,1);
-        table.setValueAt(r,12,3);
+        Object Gennaio_E = table.getValueAt(1,1);
+        table.setValueAt(Gennaio_E,1,3);
+        Object Febbario_E = table.getValueAt(2,1);
+        table.setValueAt(Febbario_E,2,3);
+        Object Marzo_E = table.getValueAt(3,1);
+        table.setValueAt(Marzo_E,3,3);
+        Object Aprile_E = table.getValueAt(4,1);
+        table.setValueAt(Aprile_E,4,3);
+        Object Maggio_E = table.getValueAt(5,1);
+        table.setValueAt(Maggio_E,5,3);
+        Object Giugno_E = table.getValueAt(6,1);
+        table.setValueAt(Giugno_E,6,3);
+        Object Luglio_E = table.getValueAt(7,1);
+        table.setValueAt(Luglio_E,7,3);
+        Object Agosto_E = table.getValueAt(8,1);
+        table.setValueAt(Agosto_E,8,3);
+        Object Settembre_E = table.getValueAt(9,1);
+        table.setValueAt(Settembre_E,9,3);
+        Object Ottobre_E = table.getValueAt(10,1);
+        table.setValueAt(Ottobre_E,10,3);
+        Object Novembre_E = table.getValueAt(11,1);
+        table.setValueAt(Novembre_E,11,3);
+        Object Dicembre_E = table.getValueAt(12,1);
+        table.setValueAt(Dicembre_E,12,3);
 
 
 
