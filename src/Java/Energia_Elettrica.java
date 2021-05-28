@@ -6,11 +6,13 @@ import java.awt.event.ActionListener;
 
 public class Energia_Elettrica extends JFrame implements ActionListener {
 
-    public static void main(String[] args) {
+    static public void main(String[] args) {
         JPanel table_pannel = new JPanel();
         table_pannel.setLayout(new BorderLayout());
         DefaultTableModel tableModel = new DefaultTableModel();
         JTable table = new JTable(tableModel);
+        table_pannel.add((table), BorderLayout.NORTH);
+
         tableModel.addColumn(new Object[]{"Mese"});
         tableModel.addColumn(new Object[]{"Consumo in KW"});
         tableModel.addColumn(new Object[]{"Costo in Euro"});
@@ -28,30 +30,53 @@ public class Energia_Elettrica extends JFrame implements ActionListener {
         tableModel.addRow(new Object[]{" Novembre "});
         tableModel.addRow(new Object[]{" Dicembre "});
 
-        Object Gennaio_E = table.getValueAt(1, 1);
-        table.setValueAt(Gennaio_E, 1, 3);
-        Object Febbario_E = table.getValueAt(2, 1);
-        table.setValueAt(Febbario_E, 2, 3);
-        Object Marzo_E = table.getValueAt(3, 1);
-        table.setValueAt(Marzo_E, 3, 3);
-        Object Aprile_E = table.getValueAt(4, 1);
-        table.setValueAt(Aprile_E, 4, 3);
-        Object Maggio_E = table.getValueAt(5, 1);
-        table.setValueAt(Maggio_E, 5, 3);
-        Object Giugno_E = table.getValueAt(6, 1);
-        table.setValueAt(Giugno_E, 6, 3);
-        Object Luglio_E = table.getValueAt(7, 1);
-        table.setValueAt(Luglio_E, 7, 3);
-        Object Agosto_E = table.getValueAt(8, 1);
-        table.setValueAt(Agosto_E, 8, 3);
-        Object Settembre_E = table.getValueAt(9, 1);
-        table.setValueAt(Settembre_E, 9, 3);
-        Object Ottobre_E = table.getValueAt(10, 1);
-        table.setValueAt(Ottobre_E, 10, 3);
-        Object Novembre_E = table.getValueAt(11, 1);
-        table.setValueAt(Novembre_E, 11, 3);
-        Object Dicembre_E = table.getValueAt(12, 1);
-        table.setValueAt(Dicembre_E, 12, 3);
+        int Gennaio_E = (int) table.getValueAt(1, 1);
+        int G_E = Gennaio_E / 2;
+        table.setValueAt(G_E, 1, 3);
+
+        int Febbraio_E = (int) table.getValueAt(2, 1);
+        int F_E = Febbraio_E / 2;
+        table.setValueAt(F_E, 2, 3);
+
+        int Marzo_E = (int) table.getValueAt(3, 1);
+        int M_E = Marzo_E / 2;
+        table.setValueAt(M_E, 3, 3);
+
+        int Aprile_E = (int) table.getValueAt(4, 1);
+        int A_E = Aprile_E / 2;
+        table.setValueAt(A_E, 4, 3);
+
+        int Maggio_E = (int) table.getValueAt(5, 1);
+        int Mg_E = Maggio_E / 2;
+        table.setValueAt(Mg_E, 5, 3);
+
+        int Giugno_E = (int) table.getValueAt(6, 1);
+        int Go_E = Giugno_E / 2;
+        table.setValueAt(Go_E, 6, 3);
+
+        int Luglio_E = (int) table.getValueAt(7, 1);
+        int L_E = Luglio_E / 2;
+        table.setValueAt(L_E, 7, 3);
+
+        int Agosto_E = (int) table.getValueAt(8, 1);
+        int Ag_E = Agosto_E / 2;
+        table.setValueAt(Ag_E, 8, 3);
+
+        int Settembre_E = (int) table.getValueAt(9, 1);
+        int S_E = Settembre_E / 2;
+        table.setValueAt(S_E, 9, 3);
+
+        int Ottobre_E = (int) table.getValueAt(10, 1);
+        int O_E = Ottobre_E / 2;
+        table.setValueAt(O_E, 10, 3);
+
+        int Novembre_E = (int) table.getValueAt(11, 1);
+        int N_E = Novembre_E / 2;
+        table.setValueAt(N_E, 11, 3);
+
+        int Dicembre_E = (int) table.getValueAt(12, 1);
+        int D_E = Dicembre_E / 2;
+        table.setValueAt(D_E, 12, 3);
 
 
         System.out.println("Table rows = " + table.getRowCount());
@@ -62,7 +87,12 @@ public class Energia_Elettrica extends JFrame implements ActionListener {
         frame.add(new JScrollPane(table_pannel));
         frame.setVisible(true);
 
+
+
+
+
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
