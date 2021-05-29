@@ -14,6 +14,9 @@ public class Login extends JFrame implements ActionListener{
     JTextField Username;
     JPasswordField Password;
     JButton AccediButton;
+    JDialog Error;
+    JLabel LabelError;
+    JButton Riprova;
 
     public Login() {
         super("Login");
@@ -45,10 +48,22 @@ public class Login extends JFrame implements ActionListener{
         String password = Password.getText();
 
         if(e.getSource() == AccediButton) {
+
             if (userName.trim().equals("admin") && password.trim().equals("admin")) {
                 SwingUtilities.invokeLater(AutoSwing::new);
-            } else {
 
+            } else {
+                JFrame f = new JFrame();
+                Object[] options = { "Riprova" };
+
+                JOptionPane.showOptionDialog( f,
+                        "Email o Password Errati",
+                        "Errore",
+                        JOptionPane.OK_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null,
+                        options,
+                        options[0]);
             }
         }
 

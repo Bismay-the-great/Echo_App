@@ -1,5 +1,7 @@
 package User;
 
+import Car.Car;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -7,6 +9,7 @@ public class User {
 
     String Name;
     String Surname;
+    Car UserCar;
     private String Email;
     private String Password;
 
