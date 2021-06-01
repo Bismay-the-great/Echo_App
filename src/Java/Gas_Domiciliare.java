@@ -5,9 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Energia_Elettrica extends JFrame implements ActionListener {
+public class Gas_Domiciliare extends JFrame implements ActionListener {
 
-    public Energia_Elettrica() {
+    public Gas_Domiciliare() {
 
         JPanel table_pannel = new JPanel();
         table_pannel.setLayout(new BorderLayout());
@@ -57,7 +57,7 @@ public class Energia_Elettrica extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(Energy_Electric::new);
+        SwingUtilities.invokeLater(Gas_Domiciliare::new);
     }
 
 }

@@ -6,10 +6,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class Gas_Domiciliare extends JFrame implements ActionListener {
+public class Energy_Electric extends JFrame implements ActionListener {
 
-        public Gas_Domiciliare () {
-
+        public Energy_Electric() {
                 JPanel table_pannel = new JPanel();
                 table_pannel.setLayout(new BorderLayout());
                 DefaultTableModel tableModel = new DefaultTableModel();
@@ -23,11 +22,11 @@ public class Gas_Domiciliare extends JFrame implements ActionListener {
 
                 String[] Mesi = {"Gennaio", "Febbraio","Marzo","Aprile","Maggio","Giugno",
                         "Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"};
-                int row = table.getRowCount();
+                int row = 12;
                 for(int i = 0; i < row; ++i){
-                        tableModel.addColumn(new Object[]{Mesi[i]});
+                        tableModel.addRow(new Object[]{Mesi[i]});
                 }
-                for(int i = 0; i < row; ++i){
+                for(int i = 1; i < row; ++i){
                         int row1 = 1;
                         int column1 = 1;
                         int column2 = 3;
@@ -39,7 +38,33 @@ public class Gas_Domiciliare extends JFrame implements ActionListener {
                                         table.setValueAt(Mv, row1, column2);
                                         ++row1;
                                 }
-                }
+                        int fine_anno = (int) table.getValueAt(13,3);
+
+                                if(fine_anno != 0)
+                                        for(int z = 1; z < row; ++z){
+                                                int row2 = 1;
+                                                int consumo_totale = 0;
+                                                int value1 = (int) table.getValueAt(row2, column1);
+                                                consumo_totale += value1;
+                                                ++row2;
+                                        }
+                                if(fine_anno != 0)
+                                        for(int y = 1; y < row; ++y) {
+                                                int row3 = 1;
+                                                int column3 = 2;
+                                                int costo_totale = 0;
+                                                int value2 = (int) table.getValueAt(row3, column3);
+                                                costo_totale += value2;
+                                                ++row3;
+                                        }
+                                if(fine_anno != 0)
+                                        for(int y = 1; y < row; ++y) {
+                                                int row4 = 1;
+                                                int c02_prodotta_totale = 0;
+                                                int value3 = (int) table.getValueAt(row4, column2);
+                                                c02_prodotta_totale += value3;
+                                                ++row4;
+                                        }
 
 
 
@@ -47,7 +72,6 @@ public class Gas_Domiciliare extends JFrame implements ActionListener {
                 setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 setSize(500, 500);
                 setVisible(true);
-
 
         }
 
