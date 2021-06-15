@@ -22,10 +22,12 @@ public class Energy_Electric extends JFrame implements ActionListener {
 
                 String[] Mesi = {"Gennaio", "Febbraio","Marzo","Aprile","Maggio","Giugno",
                         "Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"};
+
                 int row = 12;
                 for(int i = 0; i < row; ++i){
                         tableModel.addRow(new Object[]{Mesi[i]});
                 }
+
                 for(int i = 1; i < row; ++i){
                         int row1 = 1;
                         int column1 = 1;
@@ -38,33 +40,47 @@ public class Energy_Electric extends JFrame implements ActionListener {
                                         table.setValueAt(Mv, row1, column2);
                                         ++row1;
                                 }
-                        int fine_anno = (int) table.getValueAt(13,3);
 
+                        // a fine anno aggiungo riga con il totale di tutti i dati della specifica colonna
+
+                        int fine_anno = (int) table.getValueAt(13,3);
+                        int row2 = 1;
+                        int consumo_totale = 0;
                                 if(fine_anno != 0)
                                         for(int z = 1; z < row; ++z){
-                                                int row2 = 1;
-                                                int consumo_totale = 0;
+
                                                 int value1 = (int) table.getValueAt(row2, column1);
+                                                if(value1 != 0){
                                                 consumo_totale += value1;
-                                                ++row2;
+                                                ++row2;}
                                         }
+                                table.setValueAt(consumo_totale,row2,column1);
+                        int row3 = 1;
+                        int column3 = 2;
+                        int costo_totale = 0;
+
+
+
                                 if(fine_anno != 0)
                                         for(int y = 1; y < row; ++y) {
-                                                int row3 = 1;
-                                                int column3 = 2;
-                                                int costo_totale = 0;
                                                 int value2 = (int) table.getValueAt(row3, column3);
+                                                if(value2 != 0){
                                                 costo_totale += value2;
-                                                ++row3;
+                                                ++row3;}
                                         }
+                                table.setValueAt(costo_totale,row3,column3);
+                        int row4 = 1;
+                        int c02_prodotta_totale = 0;
+                                        
                                 if(fine_anno != 0)
                                         for(int y = 1; y < row; ++y) {
-                                                int row4 = 1;
-                                                int c02_prodotta_totale = 0;
+
                                                 int value3 = (int) table.getValueAt(row4, column2);
+                                                if(value3 != 0){
                                                 c02_prodotta_totale += value3;
-                                                ++row4;
+                                                ++row4;}
                                         }
+                                table.setValueAt(c02_prodotta_totale,row4,column2);
 
 
 
@@ -73,7 +89,7 @@ public class Energy_Electric extends JFrame implements ActionListener {
                 setSize(500, 500);
                 setVisible(true);
 
-        }
+        }}
 
         @Override
         public void actionPerformed(ActionEvent e) {

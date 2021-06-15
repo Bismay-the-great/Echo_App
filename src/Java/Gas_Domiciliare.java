@@ -26,28 +26,68 @@ public class Gas_Domiciliare extends JFrame implements ActionListener {
         for(int i = 0; i < row; ++i){
             tableModel.addColumn(new Object[]{Mesi[i]});
         }
-        for(int i = 0; i < row; ++i){
+        for(int i = 0; i < row; ++i) {
             int row1 = 1;
             int column1 = 1;
             int column2 = 3;
-            int controllo = (int) table.getValueAt(row1,column1);
-            if( controllo != 0)
-                for(int j = 0; j < row; ++j){
+            int controllo = (int) table.getValueAt(row1, column1);
+            if (controllo != 0)
+                for (int j = 0; j < row; ++j) {
                     int Mese_vuoto = (int) table.getValueAt(row1, column1);
                     int Mv = Mese_vuoto * 2;
                     table.setValueAt(Mv, row1, column2);
                     ++row1;
                 }
+
+            // a fine anno aggiungo riga con il totale di tutti i dati della specifica colonna
+
+            int fine_anno = (int) table.getValueAt(13, 3);
+            int row2 = 1;
+            int consumo_totale = 0;
+            if (fine_anno != 0)
+                for (int z = 1; z < row; ++z) {
+
+                    int value1 = (int) table.getValueAt(row2, column1);
+                    if (value1 != 0) {
+                        consumo_totale += value1;
+                        ++row2;
+                    }
+                }
+            table.setValueAt(consumo_totale, row2, column1);
+
+            int row3 = 1;
+            int column3 = 2;
+            int costo_totale = 0;
+
+
+            if (fine_anno != 0)
+                for (int y = 1; y < row; ++y) {
+                    int value2 = (int) table.getValueAt(row3, column3);
+                    if (value2 != 0) {
+                        costo_totale += value2;
+                        ++row3;
+                    }
+                }
+            table.setValueAt(costo_totale, row3, column3);
+
+            int row4 = 1;
+            int c02_prodotta_totale = 0;
+
+            if(fine_anno != 0)
+                for(int y = 1; y < row; ++y) {
+
+                    int value3 = (int) table.getValueAt(row4, column2);
+                    if(value3 != 0){
+                        c02_prodotta_totale += value3;
+                        ++row4;}
+                }
+            table.setValueAt(c02_prodotta_totale,row4,column2);
+
+            setContentPane(table_pannel);
+            setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            setSize(500, 500);
+            setVisible(true);
         }
-
-
-
-        setContentPane(table_pannel);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(500, 500);
-        setVisible(true);
-
-
     }
 
     @Override
